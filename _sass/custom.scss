@@ -1,0 +1,68 @@
+/* Make WP-style classes work in Jekyll */
+.alignright, .align-right {
+    float: right;
+    margin: 0 0 1rem 1rem;   /* space from the text */
+  }
+  .alignleft, .align-left {
+    float: left;
+    margin: 0 1rem 1rem 0;
+  }
+  .aligncenter, .align-center {
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  
+  /* Keep images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* prevents odd line-height gaps around inline images */
+  }
+  
+  /* Clear floats so later content doesn’t slide under the image */
+  .post-content::after,
+  .page-content::after,
+  .content::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Mobile: stack image above text instead of floating */
+  @media (max-width: 640px) {
+    .alignright, .align-right,
+    .alignleft, .align-left {
+      float: none;
+      margin: 0 0 1rem 0;
+    }
+  }
+  
+.align-right.round {
+    float: right;
+    margin: 0 0 1rem 1rem;
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+  }
+  
+  .site-title {
+    line-height: 1.2;
+  }
+  .site-title .subtitle {
+    font-size: 0.8em;   /* smaller text */
+    font-weight: 300;   /* lighter weight */
+    display: block;     /* forces onto new line */
+    margin-top: 0.1em;  /* tighten spacing */
+  }
+
+.inactive { color:#999; text-decoration:none; pointer-events:none; cursor:default; }
+
+
+.robot {
+  width: 300px;
+  height: 300px;     /* uniform box */
+  object-fit: contain; /* shrink-to-fit, no crop */
+  background: #f5f5f5; /* shows behind the image where needed */
+  object-position: center;
+}
+.round { border-radius: 12px; }     /* optional */
+.align-right { float: left; margin: 0 0 1rem 1rem; }
