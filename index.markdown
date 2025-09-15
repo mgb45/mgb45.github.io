@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "About Me"
+title: "About"
 ---
 
 <p><img class="align-right round" src="/images/me.jpg" alt="Michael Burke headshot" width="200" height="200">
