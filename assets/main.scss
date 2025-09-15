@@ -1,0 +1,7 @@
+---
+# This front matter makes Jekyll process SCSS
+---
+
+@import "minima";  /* load the theme first */
+@import "custom";  /* load your overrides after */
+@import "publications.css"
