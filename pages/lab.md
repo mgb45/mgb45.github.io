@@ -4,7 +4,9 @@ title: "Our lab"
 nav_order: 1
 ---
 
-<p>I run a robot learning lab in Monash Robotics, working with a range of students and staff. At the moment, these include:</p>
+<p>I run a robot learning lab in Monash Robotics, working with a range of students and staff. </p>
+
+### Current Members
 <ul>
 <li style="list-style-type: none;">
 <ul>
@@ -27,3 +29,12 @@ nav_order: 1
 </li>
 </ul>
 <p>* co-supervision.</p>
+
+### Industry Partners and Funders
+
+Our lab is currently supported by 
+
+* ARC Linkage Project ($1.2 M) Intelligent Robotics for Pharmaceutical Formulation Development
+* ARC Discover Project ($615k) Human models for accelerated robot learning and human-robot interaction.
+
+Students are generally supported by central Australian government and university scholarships. We also also collaborate with industry partners like CSL-Behring, Proa and Omnia.  
