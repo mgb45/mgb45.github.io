@@ -35,7 +35,8 @@ nav_order: 1
 
 Our lab is currently supported by 
 
-* ARC Linkage Project ($1.2 M) Intelligent Robotics for Pharmaceutical Formulation Development
-* ARC Discover Project ($615k) Human models for accelerated robot learning and human-robot interaction.
+* ARC Discovery Project ($640k) Skillphabets: Teaching robots new skills by reducing information asymmetry.
+* ARC Discovery Project ($615k) Human models for accelerated robot learning and human-robot interaction.
+* ARC Linkage Project ($1.2 M) Intelligent Robotics for Pharmaceutical Formulation Development.
 
 Students are generally supported by central Australian government and university scholarships. We also also collaborate with industry partners like CSL-Behring, Proa and Omnia.  
