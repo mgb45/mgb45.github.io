@@ -11,7 +11,7 @@ nav_order: 1
 <li style="list-style-type: none;">
 <ul>
 <li>Charles Troeung (Postdoc)* - Pharmaceutical automation.</li>
-<li>Haoyang Jiang (PhD) - Enhancing human-robot interaction by detecting and modulating information flows.</li>
+<li>Haoyang Jiang (Postdoc)* - Human behaviour modelling.</li>
 <li>Grace Zhang (PhD) - Implicit radiance fields for vision science.</li>
 <li>Juyan Zhang (PhD) - Structured probabilistic neural models for control as inference</li>
 <li>Xiao Yang (PhD) - Agentic workflows for robotics</li>

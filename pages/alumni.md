@@ -6,6 +6,7 @@ nav_order: 4
 
 <h1>PhD</h1>
 <ul>
+<li><a href="https://www.linkedin.com/in/haoyang-jiang-84227a184">Haoyang Jiang</a> Enhancing human-robot interaction by detecting and modulating information flows. (co-supervised with Elizabeth Croft at University Victoria) (2025)</li>
 <li><a href="https://au.linkedin.com/in/bryce-ferenczi-6308ba136">Bryce Ferenczi</a>  – Efficient Deep Learning in Irregular Spatio-Temporal Tasks (co-supervised with Tom Drummond at the University of Melbourne) (2025)</li>
 <li><a href="https://www.linkedin.com/in/arturas-straizys/">Arturas Straizys</a> - Precision cutting of soft deformable materials (co-supervised with Subramanian Ramamoorthy at the University of Edinburgh) (2023)</li>
 <li><a href="https://uk.linkedin.com/in/miguel-jaques-8026ba205">Miguel Jaques</a> - <em>Physics as inverse graphics</em> (co-supervised with Tim Hospedales at the University of Edinburgh) (2022)</li>
