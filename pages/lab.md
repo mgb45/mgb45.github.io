@@ -12,7 +12,6 @@ nav_order: 1
 <ul>
 <li>Charles Troeung (Postdoc)* - Pharmaceutical automation.</li>
 <li>Haoyang Jiang (Postdoc)* - Human behaviour modelling.</li>
-<li>Amara Zuffer (PhD)* - Continual reinforcement learning.</li>
 <li>Tin Tran (PhD)* - Safe learning-based robot control.</li>
 <li>Unnati Nigam (PhD)* - Quasi-periodic Gaussian processes and applications<span class="il"> (IITB-Monash Research Academy)</span></li>
 <li>Lirui Guo (PhD)* - Psychological ownership and SAVs </li>
