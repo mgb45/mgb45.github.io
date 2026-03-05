@@ -6,8 +6,9 @@ nav_order: 4
 
 <h1>PhD</h1>
 <ul>
-<li><a href="https://www.linkedin.com/in/haoyang-jiang-84227a184">Haoyang Jiang</a> Enhancing human-robot interaction by detecting and modulating information flows. (co-supervised with Elizabeth Croft at University Victoria) (2025)</li>
-<li><a href="https://au.linkedin.com/in/bryce-ferenczi-6308ba136">Bryce Ferenczi</a>  – Efficient Deep Learning in Irregular Spatio-Temporal Tasks (co-supervised with Tom Drummond at the University of Melbourne) (2025)</li>
+<li><a href="https://www.linkedin.com/in/amarazuffer">Amara Zuffer</a> Continual reinforcement learning (co-supervised with Merhtash Harandi at Monash University)</li>
+<li><a href="https://www.linkedin.com/in/haoyang-jiang-84227a184">Haoyang Jiang*</a> Enhancing human-robot interaction by detecting and modulating information flows. (co-supervised with Elizabeth Croft at University Victoria) (2025)</li>
+<li><a href="https://au.linkedin.com/in/bryce-ferenczi-6308ba136">Bryce Ferenczi*</a>  – Efficient Deep Learning in Irregular Spatio-Temporal Tasks (co-supervised with Tom Drummond at the University of Melbourne) (2025)</li>
 <li><a href="https://www.linkedin.com/in/arturas-straizys/">Arturas Straizys</a> - Precision cutting of soft deformable materials (co-supervised with Subramanian Ramamoorthy at the University of Edinburgh) (2023)</li>
 <li><a href="https://uk.linkedin.com/in/miguel-jaques-8026ba205">Miguel Jaques</a> - <em>Physics as inverse graphics</em> (co-supervised with Tim Hospedales at the University of Edinburgh) (2022)</li>
 <li><a href="https://za.linkedin.com/in/mkhuseli-ngxande-15973480">Mkhuseli Ngxande</a> - <em>Style transfer to address bias in driver drowsiness detection</em> (co-supervised with Prof. Jules-Raymond Tapamo at the University of Kwazulu-Natal) (2020)</li>
@@ -24,7 +25,7 @@ nav_order: 4
 <li><a href="https://za.linkedin.com/in/windy-mokuwe">Windy Mokuwe</a> - <em>Visualising convolutional neural networks</em> (co-supervised with Anna Bosman at the University of Pretoria) (2019)</li>
 <li><a href="https://za.linkedin.com/in/ditebogo-masha">Ditebogo Masha</a> - <em>Proprioceptive terrain classification and characterisation</em> (co-supervised with Prof. Bhekisipho Twala at the University of Johannesburg) (2019)</li>
 </ul>
-
+*denotes lead supervision.
 <!-- wp:heading {"level":1} -->
 <h1>Postdocs</h1>
 <!-- /wp:heading -->
