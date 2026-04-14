@@ -8,7 +8,7 @@ I am a <a href="https://research.monash.edu/en/persons/michael-burke-2">Senior L
 <p>At Monash, I teach computer vision (ECE4076) to undergraduate and masters students, and integrated design (ECE4191) where students design and build robots to complete an annual challenge. I take on a service role in graduate student support, and play a role in policy development around AI in education.</p>
 
 ## Join us
-<p>PhD students interested in working with me on probabilistic machine learning and inference for robotics (imitation, learning from demonstration, representation learning for robotics, learning-based robot control) should  <a href="https://www.monash.edu/engineering/future-students/graduate-research/how-to-apply"> <strong> follow this process to apply </strong></a>. My supervision load is typically quite full, but always open to discussing projects aligned with my research interests. </p>
+<p>PhD students interested in working with me on probabilistic machine learning and inference for robotics (imitation, learning from demonstration, representation learning for robotics, learning-based robot control) should  <a href="https://www.monash.edu/graduate-research/study/apply"> <strong> follow this process to apply </strong></a>. My supervision load is typically quite full, but always open to discussing projects aligned with my research interests. </p>
 
 ## What I do
 
