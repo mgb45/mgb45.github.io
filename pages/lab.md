@@ -20,7 +20,7 @@ nav_order: 1
 <li>Emmanuel Fashae (PhD)* - Proactive multimodal multitask human robot interaction</li>
 <li>Xiao Yang (PhD) - Agentic workflows for robotics</li>
 <li>Meshach Kumar (PhD) - Computational models of construal in imitation learning</li>
-<li>Adedayo Akinade (PhD)* - Benchmarking deformable grasping</li>
+<li>Adedayo Akinade (PhD) - Benchmarking deformable grasping</li>
 <li>David Gill (PhD)* - Generative texture models for vision science.</li>
 <li>Malak Sayour (PhD)* - Instruction generation to support vision-language navigation </li>
 <li>Jin Wong (Masters) - Dexterous manipulation in cluttered environments </li>  
