@@ -10,7 +10,7 @@ I am a <a href="https://research.monash.edu/en/persons/michael-burke-2">Senior L
 ## Online Textbook
 <p>I have started writing <a href="https://michaelburke.co.za/physical-ai">a textbook on physical AI and intelligent robotics.</a> 
 
-In time, I hope this will be a rigorous bridge between classical and modern robotics, and reflect the thesis in <a href="/_data/Control_as_inference.pdf">our lab manifesto</a>.
+In time, I hope this will be a rigorous bridge between classical and modern robotics, and reflect the thesis in <a href="https://github.com/mgb45/mgb45.github.io/blob/main/_data/Control_as_inference.pdf">our lab manifesto</a>.
 </p>
 
 ## Join us
