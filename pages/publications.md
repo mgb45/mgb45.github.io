@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Publications and Pre-prints
+title: Publications/Pre-prints
 permalink: /publications/
 ---
 
