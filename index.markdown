@@ -8,7 +8,10 @@ I am a <a href="https://research.monash.edu/en/persons/michael-burke-2">Senior L
 <p>At Monash, I teach intelligent robotics (ECE4078) and computer vision (ECE4076) to undergraduate and masters students. I used to teach integrated design (ECE4191), where students designed and built robots to complete an annual challenge. I take on a service role in graduate student support, and play a role in policy development around AI in education. </p>
 
 ## Online Textbook
-<p>I have started writing <a href="https://michaelburke.co.za/physical-ai">a textbook on physical AI and intelligent robotics.</a> </p>
+<p>I have started writing <a href="https://michaelburke.co.za/physical-ai">a textbook on physical AI and intelligent robotics.</a> 
+
+In time, I hope this will be a rigorous bridge between classical and modern robotics, and reflect the thesis in <a href="/_data/Control_as_inference.pdf">our lab manifesto</a>.
+</p>
 
 ## Join us
 <p>PhD students interested in working with me on probabilistic machine learning and inference for robotics (imitation, learning from demonstration, representation learning for robotics, learning-based robot control) should  <a href="https://www.monash.edu/graduate-research/study/apply"> <strong> follow this process to apply </strong></a>. My supervision load is typically quite full, but always open to discussing projects aligned with my research interests. </p>
