@@ -12,7 +12,7 @@ nav_order: 1
 <ul>
 <li>Charles Troeung (Postdoc)* - Pharmaceutical automation.</li>
 <li>Haoyang Jiang (Postdoc)* - Human behaviour modelling.</li>
-<li>Tin Tran (PhD)* - Safe learning-based robot control.</li>
+<li>Tin Tran (Postdoc)* - Safe learning-based robot control.</li>
 <li>Unnati Nigam (PhD)* - Quasi-periodic Gaussian processes and applications<span class="il"> (IITB-Monash Research Academy)</span></li>
 <li>Lirui Guo (PhD)* - Psychological ownership and SAVs </li>
 <li>Grace Zhang (PhD) - Implicit radiance fields for vision science.</li>
@@ -24,6 +24,7 @@ nav_order: 1
 <li>David Gill (PhD)* - Generative texture models for vision science.</li>
 <li>Malak Sayour (PhD)* - Instruction generation to support vision-language navigation </li>
 <li>Jin Wong (Masters) - Dexterous manipulation in cluttered environments </li>  
+<li>Yuen Yee Mah (Phd) - Hierarchical robot skill learning by program induction </li>
 </ul>
 </li>
 </ul>
@@ -37,4 +38,4 @@ Our lab is currently supported by
 * ARC Discovery Project ($615k) Human models for accelerated robot learning and human-robot interaction.
 * ARC Linkage Project ($1.2 M) Intelligent Robotics for Pharmaceutical Formulation Development.
 
-Students are generally supported by central Australian government and university scholarships. We also also collaborate with industry partners like CSL-Behring, Proa and Omnia.  
+Students are generally supported by central Australian government and university scholarships. We also collaborate with industry partners like CSL-Behring, Proa and Omnia.  
