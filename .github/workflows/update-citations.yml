@@ -1,0 +1,73 @@
+name: Update citations from Google Scholar
+
+# Keeps _data/citations.csv up to date automatically instead of manually
+# downloading, editing, and re-uploading a CSV export from Google Scholar.
+#
+# Setup:
+#   1. Set the repository variable SCHOLAR_ID to the 'user=' value from your
+#      Google Scholar profile URL, e.g.
+#      https://scholar.google.com/citations?user=<SCHOLAR_ID>
+#      (Settings > Secrets and variables > Actions > Variables).
+#   2. That's it — the workflow runs weekly and can also be triggered
+#      manually from the Actions tab.
+#
+# How it works:
+#   - scripts/update_citations.py scrapes the Scholar profile with the free
+#     'scholarly' package and merges the results into _data/citations.csv,
+#     matching existing rows by (normalized) title. Manually curated fields
+#     such as DOI, PDF, Code and BibTeX links are never overwritten; only
+#     Scholar-derived fields (Authors, Publication, Volume, Number, Pages,
+#     Year, Publisher) are refreshed, and new publications are appended.
+#   - If the CSV changes, the workflow opens a pull request for review
+#     rather than pushing straight to the default branch, since Scholar
+#     scraping is best-effort and can occasionally return incomplete data.
+#
+# Note: Google Scholar has no official API and can rate-limit or block
+# scraping. If this workflow becomes unreliable, swap the fetch step in
+# scripts/update_citations.py for a service such as SerpApi's Google
+# Scholar Author API (paid, but far more reliable) — the CSV merge/write
+# logic does not need to change.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Every Monday at 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-citations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Update citations.csv from Google Scholar
+        run: |
+          python scripts/update_citations.py \
+            --scholar-id "${{ vars.SCHOLAR_ID }}" \
+            --csv-path _data/citations.csv
+
+      - name: Create pull request with any changes
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Update citations.csv from Google Scholar"
+          title: "Update citations from Google Scholar"
+          body: |
+            Automated update of `_data/citations.csv` from Google Scholar.
+
+            Please review before merging: Scholar scraping is best-effort and
+            manually curated fields (DOI, PDF, Code, BibTeX) are preserved,
+            but new/changed entries should be spot-checked.
+          branch: automated/update-citations
+          delete-branch: true
