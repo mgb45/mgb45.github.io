@@ -13,7 +13,7 @@ instead of manually re-exporting a CSV from Scholar.
   value from the Google Scholar profile URL
   (`https://scholar.google.com/citations?user=<SCHOLAR_ID>`).
   If the variable is not set, the workflow uses Michael Burke's public profile
-  (`Abz56f4AAAAJ`) by default.
+  (`https://scholar.google.com/citations?user=Abz56f4AAAAJ`) by default.
 - `scripts/update_citations.py` merges new Scholar data into the CSV by
   matching publications on a normalized title. Scholar-derived fields
   (Authors, Publication, Volume, Number, Pages, Year, Publisher) are refreshed
