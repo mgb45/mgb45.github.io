@@ -9,7 +9,7 @@ Merging (rather than overwriting) means:
   * Publications already in the CSV are matched to Scholar entries by a
     normalized title, and fields that Scholar can supply (Authors,
     Publication, Year, Volume, Number, Pages, Publisher) are refreshed.
-  * Fields Scholar does not provide (DOI, PDF, Code, BibTeX, ...) are left
+  * Fields Scholar does not provide (DOI, PDF, Code, ...) are left
     untouched, so manually curated links are never lost.
   * New publications found on Scholar are appended.
   * Existing rows that are no longer on Scholar are kept as-is (Scholar is
