@@ -8,7 +8,7 @@ automatically by the `.github/workflows/update-citations.yml` workflow,
 instead of manually re-exporting a CSV from Scholar.
 
 - The workflow runs weekly (and can be triggered manually from the Actions
-  tab) and opens a pull request with any updates for review.
+  tab) and commits any updates to the branch from which it runs.
 - It relies on the repository variable `SCHOLAR_ID`, set to the `user=`
   value from the Google Scholar profile URL
   (`https://scholar.google.com/citations?user=<SCHOLAR_ID>`).
