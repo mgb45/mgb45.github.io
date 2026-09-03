@@ -18,9 +18,9 @@ name: Update citations from Google Scholar
 #     such as DOI, PDF, Code, URL and BibTeX links are never overwritten; only
 #     non-empty Scholar-derived fields (Authors, Publication, Volume, Number,
 #     Pages, Year, Publisher) are refreshed, and new publications are appended.
-#   - If the CSV changes, the workflow opens a pull request for review
-#     rather than pushing straight to the default branch, since Scholar
-#     scraping is best-effort and can occasionally return incomplete data.
+#   - If the CSV changes, the workflow commits the update to the branch from
+#     which it runs. This avoids requiring the repository setting that allows
+#     the GitHub Actions token to create pull requests.
 #
 # Note: Google Scholar has no official API and can rate-limit or block
 # scraping. If this workflow becomes unreliable, swap the fetch step in
@@ -35,7 +35,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   update-citations:
@@ -68,17 +67,15 @@ jobs:
             --scholar-id "${{ env.SCHOLAR_ID }}" \
             --csv-path _data/citations.csv
 
-      - name: Create pull request with any changes
+      - name: Commit citation updates
         if: ${{ env.SCHOLAR_ID != '' }}
-        uses: peter-evans/create-pull-request@v7
-        with:
-          commit-message: "Update citations.csv from Google Scholar"
-          title: "Update citations from Google Scholar"
-          body: |
-            Automated update of `_data/citations.csv` from Google Scholar.
-
-            Please review before merging: Scholar scraping is best-effort and
-            manually curated fields (DOI, PDF, Code, URL, BibTeX) are preserved,
-            but new/changed entries should be spot-checked.
-          branch: automated/update-citations
-          delete-branch: true
+        run: |
+          if git diff --quiet -- _data/citations.csv; then
+            echo "No citation updates to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/citations.csv
+          git commit -m "Update citations.csv from Google Scholar"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
