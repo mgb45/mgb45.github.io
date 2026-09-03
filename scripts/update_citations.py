@@ -167,7 +167,7 @@ def merge_publications(
             new_row = {field: "" for field in FIELDNAMES}
             new_row.update({k: v for k, v in pub.items() if k in FIELDNAMES})
             existing_rows.append(new_row)
-            by_title[key] = new_row
+            by_title[key] = [new_row]
             added += 1
 
     return existing_rows, updated, added
