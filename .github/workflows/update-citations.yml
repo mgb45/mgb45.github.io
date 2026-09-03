@@ -40,6 +40,10 @@ permissions:
 jobs:
   update-citations:
     runs-on: ubuntu-latest
+    env:
+      # Use the repository variable when configured, otherwise use Michael
+      # Burke's public Google Scholar profile.
+      SCHOLAR_ID: ${{ vars.SCHOLAR_ID || 'Abz56f4AAAAJ' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -52,13 +56,20 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
+      - name: Check Scholar ID configuration
+        if: ${{ env.SCHOLAR_ID == '' }}
+        run: |
+          echo "::warning::Repository variable SCHOLAR_ID is not configured; skipping citation update."
+
       - name: Update citations.csv from Google Scholar
+        if: ${{ env.SCHOLAR_ID != '' }}
         run: |
           python scripts/update_citations.py \
-            --scholar-id "${{ vars.SCHOLAR_ID }}" \
+            --scholar-id "${{ env.SCHOLAR_ID }}" \
             --csv-path _data/citations.csv
 
       - name: Create pull request with any changes
+        if: ${{ env.SCHOLAR_ID != '' }}
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "Update citations.csv from Google Scholar"
