@@ -14,9 +14,9 @@ instead of manually re-exporting a CSV from Scholar.
   (`https://scholar.google.com/citations?user=<SCHOLAR_ID>`).
 - `scripts/update_citations.py` merges new Scholar data into the CSV by
   matching publications on a normalized title. Scholar-derived fields
-  (Authors, Publication, Volume, Number, Pages, Year, Publisher) are
-  refreshed automatically, while manually curated fields (DOI, PDF and Code)
-  are always preserved.
+  (Authors, Publication, Volume, Number, Pages, Year, Publisher) are refreshed
+  automatically when Scholar returns a non-empty value, while manually curated
+  fields (DOI, PDF, Code, URL and BibTeX) are always preserved.
 - Google Scholar has no official API and scraping (via the `scholarly`
   package) is best-effort; if it becomes unreliable, the fetch step in
   `scripts/update_citations.py` can be swapped for a paid service such as

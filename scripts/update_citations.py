@@ -7,7 +7,7 @@ This script fetches the publication list for a Google Scholar author profile
 
 Merging (rather than overwriting) means:
   * Publications already in the CSV are matched to Scholar entries by a
-    normalized title, and fields that Scholar can supply (Authors,
+    normalized title, and non-empty fields that Scholar can supply (Authors,
     Publication, Year, Volume, Number, Pages, Publisher) are refreshed.
   * Fields Scholar does not provide (DOI, PDF, Code, ...) are left
     untouched, so manually curated links are never lost.
@@ -43,6 +43,8 @@ FIELDNAMES = [
     "DOI",
     "PDF",
     "Code",
+    "URL",
+    "BibTeX",
 ]
 
 # Fields that Google Scholar can supply and that are safe to auto-refresh.
@@ -132,7 +134,17 @@ def merge_publications(
 
     Returns the merged rows plus counts of (updated, added) entries.
     """
-    by_title = {normalize_title(row.get("Title", "")): row for row in existing_rows}
+    by_title: dict[str, list[dict[str, str]]] = {}
+    for row in existing_rows:
+        key = normalize_title(row.get("Title", ""))
+        if not key:
+            continue
+        if key in by_title:
+            print(
+                f"Warning: duplicate existing title; updating rows in order: {row.get('Title', '')}",
+                file=sys.stderr,
+            )
+        by_title.setdefault(key, []).append(row)
     updated = 0
     added = 0
 
@@ -141,8 +153,8 @@ def merge_publications(
         if not key:
             continue
 
-        if key in by_title:
-            row = by_title[key]
+        if key in by_title and by_title[key]:
+            row = by_title[key].pop(0)
             changed = False
             for field in AUTO_FIELDS:
                 new_value = pub.get(field, "")
@@ -163,11 +175,16 @@ def merge_publications(
 
 def write_csv(csv_path: Path, rows: list[dict[str, str]], has_bom: bool) -> None:
     encoding = "utf-8-sig" if has_bom else "utf-8"
+    fieldnames = list(FIELDNAMES)
+    for row in rows:
+        for field in row:
+            if field not in fieldnames:
+                fieldnames.append(field)
     with csv_path.open("w", encoding=encoding, newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=FIELDNAMES, extrasaction="ignore")
+        writer = csv.DictWriter(fh, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         for row in rows:
-            writer.writerow({field: row.get(field, "") for field in FIELDNAMES})
+            writer.writerow({field: row.get(field, "") or "" for field in fieldnames})
 
 
 def main() -> int:

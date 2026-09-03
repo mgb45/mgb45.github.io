@@ -15,9 +15,9 @@ name: Update citations from Google Scholar
 #   - scripts/update_citations.py scrapes the Scholar profile with the free
 #     'scholarly' package and merges the results into _data/citations.csv,
 #     matching existing rows by (normalized) title. Manually curated fields
-#     such as DOI, PDF and Code links are never overwritten; only
-#     Scholar-derived fields (Authors, Publication, Volume, Number, Pages,
-#     Year, Publisher) are refreshed, and new publications are appended.
+#     such as DOI, PDF, Code, URL and BibTeX links are never overwritten; only
+#     non-empty Scholar-derived fields (Authors, Publication, Volume, Number,
+#     Pages, Year, Publisher) are refreshed, and new publications are appended.
 #   - If the CSV changes, the workflow opens a pull request for review
 #     rather than pushing straight to the default branch, since Scholar
 #     scraping is best-effort and can occasionally return incomplete data.
@@ -67,7 +67,7 @@ jobs:
             Automated update of `_data/citations.csv` from Google Scholar.
 
             Please review before merging: Scholar scraping is best-effort and
-            manually curated fields (DOI, PDF, Code) are preserved,
+            manually curated fields (DOI, PDF, Code, URL, BibTeX) are preserved,
             but new/changed entries should be spot-checked.
           branch: automated/update-citations
           delete-branch: true
