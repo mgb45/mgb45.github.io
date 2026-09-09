@@ -77,8 +77,8 @@ def fetch_scholar_publications(scholar_id: str) -> list[dict[str, str]]:
         from scholarly import scholarly
     except ImportError as exc:  # pragma: no cover - dependency guard
         raise SystemExit(
-            "The 'scholarly' package is required. Install it with "
-            "'pip install -r scripts/requirements.txt'."
+            "The citation updater dependencies could not be imported "
+            f"({exc}). Install them with 'pip install -r scripts/requirements.txt'."
         ) from exc
 
     try:
