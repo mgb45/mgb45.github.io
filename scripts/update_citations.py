@@ -28,6 +28,7 @@ import argparse
 import csv
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any
 
@@ -81,11 +82,26 @@ def fetch_scholar_publications(scholar_id: str) -> list[dict[str, str]]:
             f"({exc}). Install them with 'pip install -r scripts/requirements.txt'."
         ) from exc
 
-    try:
-        author = scholarly.search_author_id(scholar_id)
-        author = scholarly.fill(author, sections=["publications"])
-    except Exception as exc:  # noqa: BLE001 - surface any scraping failure
-        raise SystemExit(f"Failed to fetch Google Scholar profile '{scholar_id}': {exc}") from exc
+    max_attempts = 3
+    author: dict[str, Any] | None = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            author = scholarly.search_author_id(scholar_id)
+            author = scholarly.fill(author, sections=["publications"])
+            break
+        except Exception as exc:  # noqa: BLE001 - surface scraping failures after retries
+            if attempt < max_attempts:
+                print(
+                    f"Warning: failed to fetch Google Scholar profile '{scholar_id}' "
+                    f"(attempt {attempt}/{max_attempts}): {exc}. Retrying...",
+                    file=sys.stderr,
+                )
+                time.sleep(5 * attempt)
+                continue
+            raise SystemExit(f"Failed to fetch Google Scholar profile '{scholar_id}': {exc}") from exc
+
+    if author is None:  # pragma: no cover - defensive; loop always exits via break/raise
+        raise SystemExit(f"Failed to fetch Google Scholar profile '{scholar_id}'.")
 
     publications: list[dict[str, str]] = []
     for pub in author.get("publications", []):
